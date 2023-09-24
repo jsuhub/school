@@ -1,14 +1,19 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useContext, useState } from "react";
 import styles from "./Select.module.scss"
+import { FormInfoContext } from ".";
 
 type PropsType = {
     label: string
 }
 
 const Select: FC<PropsType> = ({ label, }) => {
-    const [option, setOption] = useState("o1")
+
+    const state = useContext(FormInfoContext)
+
+    const [option, setOption] = useState(state.select)
 
     function changeOption(evt: ChangeEvent<HTMLSelectElement>) {
+        state.select = evt.target.value
         setOption(evt.target.value)
     }
 

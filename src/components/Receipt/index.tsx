@@ -12,7 +12,7 @@ const intialState = {
     zy: "",
     dw: "",
     phone: "",
-    select: "",
+    select: "o1",
     fc: ""
 }
 export const FormInfoContext = createContext(intialState)
@@ -32,7 +32,10 @@ const Receipt: FC = () => {
                     <Select label="返校时间" />
                     <InputItem label="返程时间" type="date" />
                 </div>
-                <button className={styles.submit} onClick={() => request(JSON.stringify(intialState))}>提交</button>
+                <button className={styles.submit} onClick={() => {
+                    request(JSON.stringify(intialState))
+                    alert("提交成功")
+                }}>提交</button>
             </div>
         </FormInfoContext.Provider>
     )
