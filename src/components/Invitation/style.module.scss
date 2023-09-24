@@ -1,0 +1,38 @@
+.invitation {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/invitation.png');
+  background-position: center;
+  background-size: cover;
+
+  .textContainer {
+    padding-top: 168px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .title {
+      color: var(--text-color);
+      text-indent: 32px;
+    }
+
+    .content {
+      color: var(--text-color);
+      text-indent: 32px;
+      padding: 0 20px;
+    }
+  }
+
+  .inscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+    color: var(--text-color);
+    position: absolute;
+    right: 24px;
+    bottom: 36px;
+  }
+
+}

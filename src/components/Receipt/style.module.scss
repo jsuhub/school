@@ -1,0 +1,28 @@
+.receipt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/receipt.png');
+  background-position: center;
+  background-size: cover;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 168px;
+  }
+
+  .submit {
+    margin-top: 24px;
+    height: 24px;
+    border-radius: 20px;
+    width: 80px;
+    background-color: transparent;
+    border-color: var(--text-color);
+    color: var(--text-color);
+  }
+}
