@@ -4,8 +4,11 @@ import InputItem from "./InputItem";
 import Select from "./Select";
 import { request } from "@/request/request";
 
+type Type = {
+    [key: string]: string,
+}
 
-const intialState = {
+const intialState: Type = {
     name: '',
     sex: "",
     by: "",
@@ -33,8 +36,19 @@ const Receipt: FC = () => {
                     <InputItem label="返程时间" type="date" />
                 </div>
                 <button className={styles.submit} onClick={() => {
+                    for (const key in intialState) {
+                        console.log(intialState[key])
+                        if (key !== "phone" && intialState[key] === "") {
+                            alert("请补全信息后再提交!")
+                            return
+                        } else if (key === "phone" && intialState[key] === "") {
+                            alert("电话号码格式不符合!")
+                            return
+                        }
+
+                    }
                     request(JSON.stringify(intialState))
-                    alert("提交成功")
+                    alert("提交成功!")
                 }}>提交</button>
             </div>
         </FormInfoContext.Provider>
